@@ -1,0 +1,5 @@
+### Health check
+GET http://localhost:8000/v1/healthy
+
+### Error
+GET http://localhost:8000/v1/error
