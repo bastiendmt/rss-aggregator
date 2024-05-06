@@ -3,3 +3,11 @@ GET http://localhost:8000/v1/healthy
 
 ### Error
 GET http://localhost:8000/v1/error
+
+### Create user
+POST http://localhost:8000/v1/users
+Content-Type: application/json
+
+{
+  "name": "John Doe"
+}
