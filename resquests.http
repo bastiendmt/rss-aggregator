@@ -1,3 +1,5 @@
+@user_api_key = 01a502d9c3b2bfc267c243d59fc16c7fb5437b9d3ee45ef2e263f47dcdc97950
+
 ### Health check
 GET http://localhost:8000/v1/healthy
 
@@ -15,4 +17,15 @@ Content-Type: application/json
 ### Get user
 GET http://localhost:8000/v1/users
 Content-Type: application/json
-Authorization: ApiKey <api-key>
+Authorization: ApiKey {{user_api_key}}
+
+### Create feed
+POST http://localhost:8000/v1/feeds
+Content-Type: application/json
+Authorization: ApiKey {{user_api_key}}
+
+{
+  "name": "My Feed",
+  "url": "https://google.com",
+  "user_id": "d4d2ee1e-bd1a-4ef2-ae0a-d0d1d2d3d4d5"
+}
