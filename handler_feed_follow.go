@@ -7,10 +7,12 @@ import (
 	"time"
 
 	"github.com/bastiendmt/rss-aggregator/internal/database"
+	"github.com/go-chi/chi"
 	"github.com/google/uuid"
 )
 
 func (apiCfg *apiConfig) handleCreateFeedFollow(w http.ResponseWriter, r *http.Request, user database.User) {
+	// TODO should not be able to follow feed as other users
 	type parameters struct {
 		FeedId uuid.UUID `json:"feed_id"`
 		URL    string    `json:"url"`
@@ -47,4 +49,21 @@ func (apiCfg *apiConfig) handleGetFeedFollows(w http.ResponseWriter, r *http.Req
 	}
 
 	respondWithJSON(w, 201, databaseFeedFollowsToFeedFollows(feedFollows))
+}
+
+func (apiCfg *apiConfig) handleDeleteFeedFollows(w http.ResponseWriter, r *http.Request, user database.User) {
+	feedFollowIDStr := chi.URLParam(r, "feedFollowID")
+	feedFollowID, err := uuid.Parse(feedFollowIDStr)
+	if err != nil {
+		respondWithError(w, 400, fmt.Sprintf("Couldn't parse feed follow ID: %s", err))
+		return
+	}
+
+	err = apiCfg.DB.DeleteFeedFollows(r.Context(), database.DeleteFeedFollowsParams{ID: feedFollowID, UserID: user.ID})
+	if err != nil {
+		respondWithError(w, 400, fmt.Sprintf("Couldn't delete feed follow ID: %s", err))
+		return
+	}
+
+	respondWithJSON(w, 200, struct{}{})
 }

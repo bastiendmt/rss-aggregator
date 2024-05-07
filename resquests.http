@@ -39,11 +39,16 @@ Content-Type: application/json
 Authorization: ApiKey {{user_api_key}}
 
 {
-  "feed_id": "efa8a450-b48a-4e46-9a68-5f980366cc70",
+  "feed_id": "0fd0c09d-4684-4e53-80ee-6c5eca8e21e0",
   "user_id": "1a0f8e5c-1ecb-4e39-96b5-840875b6b8e6"
 }
 
 ### Get feed follow
 GET http://localhost:8000/v1/feed_follows
+Content-Type: application/json
+Authorization: ApiKey {{user_api_key}}
+
+### Delete feed follow
+DELETE http://localhost:8000/v1/feed_follows/e5541a9b-030b-4175-b201-a1a930096f0a
 Content-Type: application/json
 Authorization: ApiKey {{user_api_key}}
