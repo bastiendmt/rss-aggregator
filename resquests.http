@@ -42,3 +42,8 @@ Authorization: ApiKey {{user_api_key}}
   "feed_id": "efa8a450-b48a-4e46-9a68-5f980366cc70",
   "user_id": "1a0f8e5c-1ecb-4e39-96b5-840875b6b8e6"
 }
+
+### Get feed follow
+GET http://localhost:8000/v1/feed_follows
+Content-Type: application/json
+Authorization: ApiKey {{user_api_key}}
