@@ -29,3 +29,6 @@ Authorization: ApiKey {{user_api_key}}
   "url": "https://google.com",
   "user_id": "d4d2ee1e-bd1a-4ef2-ae0a-d0d1d2d3d4d5"
 }
+
+### Get feed
+GET http://localhost:8000/v1/feeds
