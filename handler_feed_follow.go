@@ -12,10 +12,8 @@ import (
 )
 
 func (apiCfg *apiConfig) handleCreateFeedFollow(w http.ResponseWriter, r *http.Request, user database.User) {
-	// TODO should not be able to follow feed as other users
 	type parameters struct {
 		FeedId uuid.UUID `json:"feed_id"`
-		URL    string    `json:"url"`
 	}
 	decoder := json.NewDecoder(r.Body)
 	params := parameters{}
