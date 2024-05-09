@@ -1,4 +1,4 @@
-@user_api_key = <user_api_key>
+@user_api_key = 56b83baaaadb5862df6bdf63662c84829f4fbc9a204819a0bd5f8d444e388836
 
 ### Health check
 GET http://localhost:8000/v1/healthy
@@ -30,7 +30,7 @@ Authorization: ApiKey {{user_api_key}}
   "user_id": "d4d2ee1e-bd1a-4ef2-ae0a-d0d1d2d3d4d5"
 }
 
-### Get feed
+### Get feeds
 GET http://localhost:8000/v1/feeds
 
 ### Follow feed
@@ -50,5 +50,10 @@ Authorization: ApiKey {{user_api_key}}
 
 ### Delete feed follow
 DELETE http://localhost:8000/v1/feed_follows/e5541a9b-030b-4175-b201-a1a930096f0a
+Content-Type: application/json
+Authorization: ApiKey {{user_api_key}}
+
+### Get posts
+GET http://localhost:8000/v1/posts
 Content-Type: application/json
 Authorization: ApiKey {{user_api_key}}
