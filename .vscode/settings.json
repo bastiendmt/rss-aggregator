@@ -1,0 +1,7 @@
+{
+  "rest-client.environmentVariables": {
+    "local": {
+      "url": "http://localhost:8000"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+### Create user
+POST http://localhost:8000/v1/users
+Content-Type: application/json
+
+{
+  "name": "Jane"
+}
+
+### Get user
+GET http://localhost:8000/v1/users
+Content-Type: application/json
+Authorization: ApiKey {{$dotenv USER_API_KEY}}

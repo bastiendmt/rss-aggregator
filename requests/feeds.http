@@ -1,0 +1,13 @@
+
+### Create feed
+POST http://localhost:8000/v1/feeds
+Content-Type: application/json
+Authorization: ApiKey {{$dotenv USER_API_KEY}}
+
+{
+  "name": "My Feed",
+  "url": "https://google.com"
+}
+
+### Get feeds
+GET http://localhost:8000/v1/feeds

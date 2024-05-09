@@ -1,0 +1,21 @@
+
+@feed_id = 0fd0c09d-4684-4e53-80ee-6c5eca8e21e0
+
+### Follow feed
+POST http://localhost:8000/v1/feed_follows
+Content-Type: application/json
+Authorization: ApiKey {{$dotenv USER_API_KEY}}
+
+{
+  "feed_id": "{{feed_id}}"
+}
+
+### Get feed follow
+GET http://localhost:8000/v1/feed_follows
+Content-Type: application/json
+Authorization: ApiKey {{$dotenv USER_API_KEY}}
+
+### Delete feed follow
+DELETE http://localhost:8000/v1/feed_follows/{{feed_id}}
+Content-Type: application/json
+Authorization: ApiKey {{$dotenv USER_API_KEY}}
